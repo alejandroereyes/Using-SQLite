@@ -86,6 +86,19 @@ Normal Mode
 
 
 
+Hard Mode
+---------
+
+- Eronomic Concrete Gloves, Pratical Rubber Computer, & Incredible Granite Car have been ordered the most equally 9 times each
+
+
+  groups each by item_id &
+  then counts number in each group &
+  orders by the number in each group
+  SELECT title, orders.item_id, count(orders.item_id) FROM orders JOIN items ON orders.item_id = items.id GROUP BY orders.item_id ORDER BY count(orders.item_id) DESC;
+
+
+
 
 
 
