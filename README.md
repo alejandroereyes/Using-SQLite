@@ -97,6 +97,12 @@ Hard Mode
   orders by the number in each group
   SELECT title, orders.item_id, count(orders.item_id) FROM orders JOIN items ON orders.item_id = items.id GROUP BY orders.item_id ORDER BY count(orders.item_id) DESC;
 
+- Incredible Granite Car grossed the most.
+
+  groups by item id, shows total quantity of each group, & price, orders by grossed amount
+  SELECT title, orders.item_id, SUM(quantity), price, (SUM(quantity) * price) FROM orders JOIN items ON orders.item_id = items.id GROUP BY orders.item_id ORDER BY (SUM(quantity)*price) DESC;
+
+
 
 
 
