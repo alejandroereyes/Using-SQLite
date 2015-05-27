@@ -102,6 +102,11 @@ Hard Mode
   groups by item id, shows total quantity of each group, & price, orders by grossed amount
   SELECT title, orders.item_id, SUM(quantity), price, (SUM(quantity) * price) FROM orders JOIN items ON orders.item_id = items.id GROUP BY orders.item_id ORDER BY (SUM(quantity)*price) DESC;
 
+- User who spent the most is Hassan Runte
+
+  SELECT user_id, first_name, last_name, quantity, price, (quantity * price), SUM(quantity * price) FROM orders JOIN items ON orders.item_id = items.id JOIN users ON orders.user_id = users.id GROUP BY user_id ORDER BY SUM(quantity * price) DESC;
+
+
 
 
 
