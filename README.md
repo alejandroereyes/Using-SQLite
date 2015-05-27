@@ -106,7 +106,12 @@ Hard Mode
 
   SELECT user_id, first_name, last_name, quantity, price, (quantity * price), SUM(quantity * price) FROM orders JOIN items ON orders.item_id = items.id JOIN users ON orders.user_id = users.id GROUP BY user_id ORDER BY SUM(quantity * price) DESC;
 
+- Top 3 grossing categories in Desceding order:
+  1) Music, Sports, & Clothing
+  2) Beauty, Toys & Sports
+  3) Sports
 
+  SELECT category, quantity, price, (quantity * price), SUM(quantity * price) FROM orders JOIN items ON orders.item_id = items.id GROUP BY category ORDER BY SUM(quantity * price) DESC LIMIT(3);
 
 
 
